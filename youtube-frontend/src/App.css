@@ -1,0 +1,1958 @@
+@import 'tailwindcss';
+
+@theme{
+    --container-2lg:673px;
+    --container-2xlg:811px;
+    --container-4lg:992px;
+    --container-lgmob:767px;
+}
+
+@theme {
+    --animate-more : more .2s ease-out forwards;
+
+    @keyframes more {
+        0%{
+            right:0;  
+        },
+        50% {
+            transform : translate(5%)
+        }
+        100% {
+            transform: translate(-12%)
+        }
+    }
+}
+
+aside .custom_scrollbar{
+    scrollbar-width : 'none';
+    scrollbar-gutter: 'stable';
+}
+
+@media screen and (max-width: 320px) {
+
+    .LoginModalStyles{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: max-content;
+        height: max-content;
+        background-color: rgb(255, 253, 253)
+    }
+    
+    .LoginModalOverlayStyles{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 1000;
+    }
+
+    .EmailLoginInput{
+        width: 17rem;
+        height: 1.8rem;
+    }
+
+    .PassLoginInput{
+        width: 17rem;
+        height: 1.8rem;
+    }
+
+    .NewAccBtn{
+        font-size: .8rem;
+    }
+
+    .customStylesRegister{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 20rem;
+        height: calc(16rem + 2rem);
+        padding: .1rem;
+        padding-top: 5px;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesRegister{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 999;
+    }
+
+    .registrationBox{
+        display: flex;
+        padding: .2rem;
+        
+        
+    }
+
+    .Registerform_style{
+        display: grid;
+        grid-template-columns: 5rem 2fr;
+        gap:.8em;
+        padding: .4rem;
+    }
+
+    .Registerform_style input{
+        width: 8rem;
+        height: 1.5rem;
+    }
+
+    .Registerform_style label{
+        place-self: end;
+    }
+
+    .RegisterSubmit{
+        transform: translateX(50%);
+    }
+
+    .customStylesChannel{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesChannel{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 998;
+    }
+
+    .profileChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #CreateChannelform > .profileChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .ChannelImgChange{
+        width: 6.5rem;
+        height: 6rem;
+        border-radius: 100%;
+    }
+
+    #CreateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #CreateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .ChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .ChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #CreateChannelform > .ChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+    .customStylesChannelEdit{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .OverlayStylesChannelEdit{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelform > .profileUpdateChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #UpdateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelform > .UpdateChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+    .customStylesVideo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customStylesOverlayVideo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateVideoLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelVideoform > .profileUpdateVideoLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelVideoform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+
+    .ChannelVideoImgChange{
+        width: 6.5rem;
+        height: 6rem;
+    }
+    
+    #UpdateChannelVideoform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateVideoChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateVideoChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelVideoform > .UpdateVideoChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+}
+
+@media screen and (min-width: 321px) and (max-width: 384px) {
+
+    .LoginModalStyles{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 22rem;
+        height: 20rem;
+        background-color: rgb(255, 253, 253)
+    }
+    
+    .LoginModalOverlayStyles{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 1000;
+    }
+
+    .EmailLoginInput{
+        width: 18rem;
+        height: 1.8rem;
+    }
+
+    .PassLoginInput{
+        width: 18rem;
+        height: 1.8rem;
+    }
+
+    .NewAccBtn{
+        font-size: .8rem;
+    }
+
+    .customStylesRegister{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 22rem;
+        height: calc(16rem + 2rem);
+        padding: .1rem;
+        padding-top: 5px;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesRegister{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 999;
+    }
+
+    .registrationBox{
+        display: flex;
+        padding: .2rem;
+        
+        
+    }
+
+    .Registerform_style{
+        display: grid;
+        grid-template-columns: 5rem 2fr;
+        gap:.8em;
+        padding: .4rem;
+    }
+
+    .Registerform_style input{
+        width: 8rem;
+        height: 1.5rem;
+    }
+
+    .Registerform_style label{
+        place-self: end;
+    }
+
+    .RegisterSubmit{
+        transform: translateX(50%);
+    }
+
+    .customStylesChannel{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesChannel{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 998;
+    }
+
+    .profileChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #CreateChannelform > .profileChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .ChannelImgChange{
+        width: 6.5rem;
+        height: 6rem;
+        border-radius: 100%;
+    }
+
+    #CreateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #CreateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .ChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .ChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #CreateChannelform > .ChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+    .customStylesChannelEdit{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .OverlayStylesChannelEdit{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelform > .profileUpdateChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #UpdateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelform > .UpdateChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+    .customStylesVideo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customStylesOverlayVideo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateVideoLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelVideoform > .profileUpdateVideoLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelVideoform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+
+    .ChannelVideoImgChange{
+        width: 6.5rem;
+        height: 6rem;
+    }
+    
+    #UpdateChannelVideoform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateVideoChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateVideoChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelVideoform > .UpdateVideoChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+    
+}
+
+@media screen and (min-width: 385px) and (max-width: 425px) {
+
+    .LoginModalStyles{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: max-content;
+        height: 20rem;
+        background-color: rgb(255, 253, 253)
+    }
+    
+    .LoginModalOverlayStyles{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 1000;
+    }
+
+    .EmailLoginInput{
+        width: 20rem;
+        height: 1.8rem;
+    }
+
+    .PassLoginInput{
+        width: 20rem;
+        height: 1.8rem;
+    }
+
+    .NewAccBtn{
+        font-size: 1rem;
+    }
+
+   .customStylesRegister{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 25rem;
+        height: calc(16rem + 2rem);
+        padding: .1rem;
+        padding-top: 5px;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesRegister{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 999;
+    }
+
+    .registrationBox{
+        display: flex;
+        padding: .2rem;
+        
+        
+    }
+
+    .Registerform_style{
+        display: grid;
+        grid-template-columns: 5rem 2fr;
+        gap:.8em;
+        padding: .6rem;
+        
+    }
+
+    .Registerform_style input{
+        width: 8rem;
+        height: 1.5rem;
+    }
+
+    .Registerform_style label{
+        place-self: end;
+    }
+
+    .RegisterSubmit{
+        transform: translateX(50%);
+    }
+
+    .customStylesChannel{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesChannel{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 998;
+    }
+
+    .profileChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #CreateChannelform > .profileChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .ChannelImgChange{
+        width: 6.5rem;
+        height: 6rem;
+        border-radius: 100%;
+    }
+
+    #CreateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #CreateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .ChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .ChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #CreateChannelform > .ChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+    .customStylesChannelEdit{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .OverlayStylesChannelEdit{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelform > .profileUpdateChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #UpdateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelform > .UpdateChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+      .customStylesVideo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customStylesOverlayVideo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateVideoLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelVideoform > .profileUpdateVideoLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelVideoform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+
+    .ChannelVideoImgChange{
+        width: 6.5rem;
+        height: 6rem;
+    }
+    
+    #UpdateChannelVideoform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateVideoChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateVideoChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelVideoform > .UpdateVideoChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+    
+}
+
+@media screen and (min-width: 426px) and (max-width: 600px) {
+
+    .LoginModalStyles{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 30rem;
+        height: 25rem;
+        padding: 1rem;
+        background-color: rgb(255, 253, 253)
+    }
+    
+    .LoginModalOverlayStyles{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 1000;
+    }
+
+    .EmailLoginInput{
+        width: 24rem;
+        height: 1.8rem;
+    }
+
+    .PassLoginInput{
+        width: 24rem;
+        height: 1.8rem;
+    }
+
+    .NewAccBtn{
+        font-size: 1rem;
+    }
+
+    .customStylesRegister{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        min-width: 27rem;
+        max-width: 30rem;
+        height: calc(16rem + 2rem);
+        padding: .1rem;
+        padding-top: 5px;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesRegister{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 999;
+    }
+
+    .registrationBox{
+        display: flex;
+        padding: .2rem;
+        
+        
+    }
+
+    .Registerform_style{
+        display: grid;
+        grid-template-columns: 5rem 2fr;
+        gap:.8em;
+        padding: .4rem;
+    }
+
+    .Registerform_style input{
+        width: 8rem;
+        height: 1.5rem;
+    }
+
+    .Registerform_style label{
+        place-self: end;
+    }
+
+    .RegisterSubmit{
+        transform: translateX(50%);
+    }
+
+    .customStylesChannel{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesChannel{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 998;
+    }
+
+    .profileChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #CreateChannelform > .profileChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .ChannelImgChange{
+        width: 6.5rem;
+        height: 6rem;
+        border-radius: 100%;
+    }
+
+    #CreateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #CreateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .ChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .ChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #CreateChannelform > .ChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+    .customStylesChannelEdit{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .OverlayStylesChannelEdit{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelform > .profileUpdateChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #UpdateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelform > .UpdateChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+      .customStylesVideo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customStylesOverlayVideo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateVideoLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelVideoform > .profileUpdateVideoLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelVideoform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+
+    .ChannelVideoImgChange{
+        width: 6.5rem;
+        height: 6rem;
+    }
+    
+    #UpdateChannelVideoform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateVideoChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateVideoChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelVideoform > .UpdateVideoChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+    
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+
+    .LoginModalStyles{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 30rem;
+        height: 25rem;
+        padding: 1rem;
+        background-color: rgb(255, 253, 253)
+    }
+    
+    .LoginModalOverlayStyles{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 1000;
+    }
+
+    .EmailLoginInput{
+        width: 24rem;
+        height: 1.8rem;
+    }
+
+    .PassLoginInput{
+        width: 24rem;
+        height: 1.8rem;
+    }
+
+    .NewAccBtn{
+        font-size: 1rem;
+    }
+
+    .customStylesRegister{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 30rem;
+        height: calc(18rem + 2rem);
+        padding: .1rem;
+        padding-top: 5px;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesRegister{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 999;
+    }
+
+    .registrationBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Registerform_style{
+        display: grid;
+        grid-template-columns: 5rem 2fr;
+        gap:.8em;
+        padding: .9rem;
+        margin: auto 1rem auto 1rem;
+    }
+
+    .Registerform_style input:not(.RegisterSubmit){
+        width: 12rem;
+        height: 1.5rem;
+    }
+
+    .Registerform_style label{
+        place-self: end;
+    }
+
+    .RegisterSubmit{
+        margin-top: 1rem;
+        transform: translateX(100%);
+    }
+
+        .customStylesChannel{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesChannel{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 998;
+    }
+
+    .profileChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #CreateChannelform > .profileChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .ChannelImgChange{
+        width: 6.5rem;
+        height: 6rem;
+        border-radius: 100%;
+    }
+
+    #CreateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #CreateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .ChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .ChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #CreateChannelform > .ChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+    .customStylesChannelEdit{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .OverlayStylesChannelEdit{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateChannelLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelform > .profileUpdateChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+    
+    #UpdateChannelform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelform > .UpdateChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+      .customStylesVideo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customStylesOverlayVideo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateVideoLogo{
+        width: 9rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelVideoform > .profileUpdateVideoLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    #UpdateChannelVideoform input{
+      width: 18rem;
+      height: 1.5rem;
+
+    }
+
+    .ChannelVideoImgChange{
+        width: 6.5rem;
+        height: 6rem;
+    }
+    
+    #UpdateChannelVideoform textarea{
+      width: 18rem;
+      height: 6rem;
+    }
+
+    .UpdateVideoChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateVideoChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelVideoform > .UpdateVideoChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+    
+}
+
+@media screen and (min-width: 769px) {
+
+    .LoginModalStyles{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 30rem;
+        height: 25rem;
+        padding: 1rem;
+        background-color: rgb(255, 253, 253)
+    }
+    
+    .LoginModalOverlayStyles{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 1000;
+    }
+
+    .EmailLoginInput{
+        width: 24rem;
+        height: 1.8rem;
+    }
+
+    .PassLoginInput{
+        width: 24rem;
+        height: 1.8rem;
+    }
+
+    .NewAccBtn{
+        font-size: 1rem;
+    }
+
+    .customStylesRegister{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 38rem;
+        height: calc(19rem + 2rem);
+        padding: .1rem;
+        padding-top: .6rem;
+        padding-bottom: 10px;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesRegister{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 999;
+    }
+
+    .registrationBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Registerform_style{
+        display: grid;
+        grid-template-columns: 5rem 2fr;
+        gap:.8em;
+        padding: .9rem;
+        margin: auto 1rem auto 1rem;
+    }
+
+    .Registerform_style input:not(.RegisterSubmit){
+        width: 12rem;
+        height: 1.5rem;
+    }
+
+    .Registerform_style label{
+        place-self: end;
+    }
+
+    .RegisterSubmit{
+        margin-top: 1rem;
+        transform: translateX(100%);
+    }
+
+    .customStylesChannel{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 55%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customOverlayStylesChannel{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 998;
+    }
+
+    .profileChannelLogo{
+        width: 10rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #CreateChannelform > .profileChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+    }
+
+    .ChannelImgChange{
+        width: 9.5rem;
+        height: 8.5rem;
+        border-radius: 100%;
+    }
+
+    #CreateChannelform input{
+      width: 25rem;
+      height: 1.5rem;
+    }
+    
+    #CreateChannelform textarea{
+      width: 25rem;
+      height: 6rem;
+    }
+
+    .ChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .ChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #CreateChannelform > .ChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+    .customStylesChannelEdit{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 55%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .OverlayStylesChannelEdit{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 990;
+    }
+
+    .profileUpdateChannelLogo{
+        width: 10rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelform > .profileUpdateChannelLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+    }
+
+    #UpdateChannelform input{
+      width: 25rem;
+      height: 1.5rem;
+
+    }
+    
+    #UpdateChannelform textarea{
+      width: 25rem;
+      height: 6rem;
+    }
+
+    .UpdateChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelform > .UpdateChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+
+    .customStylesVideo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: 55%;
+        height: 100%;
+        background-color: rgb(255, 253, 253);
+    }
+
+    .customStylesOverlayVideo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(136, 136, 136, 0.65);
+        z-index: 980;
+    }
+
+    .profileUpdateVideoLogo{
+        width: 10rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #UpdateChannelVideoform > .profileUpdateVideoLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+    }
+
+    #UpdateChannelVideoform input{
+      width: 25rem;
+      height: 1.5rem;
+    }
+
+    .ChannelVideoImgChange{
+        width: 9.5rem;
+        height: 8.5rem;
+    }
+    
+    #UpdateChannelVideoform textarea{
+      width: 25rem;
+      height: 6rem;
+    }
+
+    .UpdateVideoChannelBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .UpdateVideoChannelBtn button{
+        background-color: black;
+        color: white;
+        font-weight: 500;
+        width: max-content;
+        height: max-content;
+        padding: .5rem;
+    }
+
+    #UpdateChannelVideoform > .UpdateVideoChannelBtn input {
+        width: max-content;
+        height: max-content;
+        background-color: rgb(10, 10, 134);
+        color: white;
+        padding: .5rem;
+        border: 1px solid black;
+    }
+    
+}
