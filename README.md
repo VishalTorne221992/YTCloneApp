@@ -26,7 +26,7 @@ This the main videos page or landing page or Home page of the Youtube clone. It 
 
 2)Youtube Video Page
 
-    Youtube Video page shows the selected video by the user and plays it and shows the related information about the video such as Video’s comments, Video descriptions, Likes and Dislikes counts, Related Videos of the Channels and Related videos to the topic.
+Youtube Video page shows the selected video by the user and plays it and shows the related information about the video such as Video’s comments, Video descriptions, Likes and Dislikes counts, Related Videos of the Channels and Related videos to the topic.
 
 3)Channel Page
 
