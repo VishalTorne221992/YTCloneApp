@@ -751,6 +751,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
       }
     } catch (error) {
       console.log(error)
+      alert('Session Error. Please try after sometime')
     }
 
   }
