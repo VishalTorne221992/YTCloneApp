@@ -11,7 +11,11 @@ const appstore = configureStore({
         UserChannel : UserChannelReducer,
         Videos : videoReducer,
         VideoComments : VideoCommentsReducer
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        immutableCheck : false,
+        serializableCheck : false
+    })
 })
 
 export default appstore

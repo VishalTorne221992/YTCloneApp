@@ -43,27 +43,6 @@ function App() {
 
   }, [SearchText]);
 
-  // function handleCapsuleClick(e){
-
-  //    console.log('Capsule Value', e.target.textContent, Capsuletext);
-     
-  //    let capsule = e.target.textContent;
-  //    const filter = AppVideos.filter((video) => {
-  //     return video.title.toLowerCase().includes(capsule.toLowerCase());
-  //   })
-
-  //   if(capsule === 'All'){
-  //     setFilteredVideos(AppVideos)
-  //     return
-  //   }
-
-  //   setSearchFlag(true)
-  //   setFilteredVideos(filter)
-     
-  // } 
-
-  
-  console.log('all videos', AllVideos, SearchText)
 
   return (
     <div className='@container/wrapper max-h-screen overflow-auto flex flex-col'>

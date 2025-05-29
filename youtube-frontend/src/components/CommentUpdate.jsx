@@ -1,16 +1,20 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import UpdateVideo from './UpdateVideo.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThumbsUp, ThumbsDown, X, Repeat, Shuffle, CheckIcon, XCircleIcon } from 'lucide-react'
 import { UpdateCommentState } from '../utils/VideoCommentSlice.js'
 
-function CommentUpdate({ video, comment }) {
+function CommentUpdate({ comment }) {
 
     let dispatch = useDispatch()
 
     const [EditOpen, setEditOpen] = useState(false);
     const [DeletedCLicked, setDeletedCLicked] = useState(false);
     const [updatedComment, setUpdatedComment] = useState(comment.text);
+
+    let userID = useSelector(store => store.userInfo.userID);
+    let isAuthorized = useSelector(store => store.userInfo.isAuthenticated);
+    let ChannelInfo = useSelector(store => store.UserChannel.Channeldetails);
 
     let commentRef = useRef(comment.text)
 
@@ -52,9 +56,8 @@ function CommentUpdate({ video, comment }) {
             commentRef.current = text;
       
         } catch (error) {
-              console.log("error updating comment", error);
+              alert('Error Updating Channel. Please try again after sometime...')
         }finally {
-            
             setEditOpen(false)
         }
         
@@ -62,7 +65,6 @@ function CommentUpdate({ video, comment }) {
 
     let CommentFlag = 'Comment';
     let UpdatedStateComments = useSelector(store => store.VideoComments.VideoComments);
-    console.log('Updated State Comments', UpdatedStateComments)
 
     function toK(num){
         if(num > 1000){
@@ -71,6 +73,8 @@ function CommentUpdate({ video, comment }) {
         }
         return num
     }
+
+    console.log('authorized', isAuthorized)
 
     return (
         <div className='flex @max-md/videopage:ml-0 @max-md/videopage:w-full @max-md/videopage:text-[.9rem] ring-1 ring-slate-200 ml-5 gap-2 m-3 relative'>
@@ -91,7 +95,7 @@ function CommentUpdate({ video, comment }) {
                 </div>
             </div>
             <div className='inline-block absolute top-0 right-0 z-10 translate-y-[50%]'>
-                <UpdateVideo key={comment._id} setEditOpen={setEditOpen} setDeletedCLicked={setDeletedCLicked} elementName={CommentFlag} element={comment} />
+                {isAuthorized && <UpdateVideo key={comment._id} setEditOpen={setEditOpen} setDeletedCLicked={setDeletedCLicked} elementName={CommentFlag} element={comment} />}
             </div>
         </div>
     )

@@ -20,6 +20,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
   const [successStatus, setSuccessStatus] = useState('')
   const [ManageUser, setManageUser] = useState(false);
   const [ChannelImage, setChannelImage] = useState(null);
+  const [UserProfileImage, setUserProfileImage] = useState(null);
   const [imageBase64, setImageBase64] = useState("");
   const [SearchVideoflag, setSearchVideoFlag] = useState(false)
   const [fullscreen, setFullScreen] = useState(false);
@@ -207,6 +208,21 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
 
   const handleSuccess = (msg) => toast.success(msg, { position: 'top-right' })
 
+  let localdata = localStorage.getItem('CurrentUser');
+
+  useEffect(() => {
+       if(localdata){
+          console.log('Local data',localdata);
+          let CurrentLoggedIn = localStorage.getItem('CurrentUser');
+          let retrievedUser = JSON.parse(CurrentLoggedIn);
+
+          let { user_ID, UserName, accountname, handleName, profilepic, ChannelsUser, token } = retrievedUser;
+          Cookies.set('access-token', token)
+          dispatch(loggedInUser({ userID: user_ID, username: UserName, AccountName: accountname, handle: handleName, pic: profilepic, Channels: ChannelsUser, isAuthenticated: true }))
+       }
+  }, [dispatch, localdata])
+  
+
 
   const handleRegisterForm = async (e) => {
     e.preventDefault();
@@ -215,11 +231,47 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
 
     const userFormdata = new FormData(userRegisterationForm);
 
+    let error = ''
+
+    let fname = userFormdata.get('firstname')
+    let lname = userFormdata.get('lastname') 
+    let em = userFormdata.get('email'); 
+    let pass = userFormdata.get('password');
+    let handle = userFormdata.get('handle');
+
+    function validateEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+     }
+
+    if(fname === ''){
+        error += 'Please enter firstname'
+    }else if(lname === ''){
+        error += 'Please enter last name'
+    }else if(!validateEmail(em)){
+        error += 'Please enter email'
+    }else if(pass === ''){
+        error += 'Please enter password'
+    }else if(handle === ''){
+        error += 'Please enter handle name'
+    }else if(!UserProfileImage){
+        error += 'Please select a image as a profile image'
+    }
+
+  
+    if(error){
+       console.log('error is', error)
+       alert(error)
+       return
+    }
+
     const userformValues = {
       Firstname: userFormdata.get('firstname'),
       Lastname: userFormdata.get('lastname'),
       email: userFormdata.get('email'),
-      password: userFormdata.get('password')
+      password: userFormdata.get('password'),
+      Username: userFormdata.get('handle'),
+      profilepic: imageBase64
     }
 
     const requestOptions = {
@@ -237,7 +289,8 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
       console.log('data', data)
       const { success, message } = data
       if (success) {
-        handleSuccess(message);
+        handleSuccess(message + '. Please Login using your credentials !');
+        setUserProfileImage(null);
         closeRegisterModal()
       } else {
         handleError(message)
@@ -409,7 +462,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
   // Handle Login when user clicks the login button
   const handleLogin = async (e) => {
 
-    e.preventDefault()
+    e.preventDefault();
 
     const userloginInfo = document.getElementById('userloginform');
 
@@ -437,11 +490,21 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
       const res = await fetch('http://localhost:4002/api/login', requestOptions)
       const data = await res.json();
       const { message, success, userID, username, accountName, handle, pic, channels, token } = data
-
+       
       if (success) {
+        const LocalUser = {
+         user_ID : userID,
+         UserName : username,
+         accountname : accountName,
+         handleName : handle,
+         profilepic : pic,
+         ChannelsUser : channels,
+         token : token  
+      }
         handleSuccess(message + " Welcome, " + username);
         dispatch(loggedInUser({ userID: userID, username: username, AccountName: accountName, handle: handle, pic: pic, Channels: channels, isAuthenticated: true }))
         Cookies.set('access-token', token)
+        localStorage.setItem('CurrentUser', JSON.stringify(LocalUser))
         closeLoginModal()
 
       } else {
@@ -449,7 +512,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
         setSuccessStatus("User Already Exists with the given email !!")
       }
     } catch (e) {
-      console.log('Error', e);
+      handleError('Email or Password Incorrect !')
     }
 
   }
@@ -461,6 +524,14 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
     reader.onloadend = () => {
       setImageBase64(reader.result);
     };
+  };
+
+  const handleProfileImage = (e) => {
+    const file = e.target.files[0];
+    const ChangedProfileImgName = document.querySelector('#ProfileImageName');
+    ChangedProfileImgName.textContent = e.target.files[0].name;
+    setUserProfileImage(file);
+    setFileToBase64(file);
   };
 
   // receive file from form
@@ -524,9 +595,28 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
 
     e.preventDefault();
 
+    let error = '';
+
     const CreateChannelData = document.getElementById('CreateChannelform');
 
     const NewChannelFormdata = new FormData(CreateChannelData)
+
+    let chnname = NewChannelFormdata.get('ChannelName')
+    let chnhandle = NewChannelFormdata.get('handle');
+
+    if(chnname === ''){
+      error += 'Please Enter Channel Name';
+    }else if(chnhandle === ''){
+      error += 'Please Enter Channel Handle (some funky name)'
+    }else if(!ChannelImage){
+      error += 'Please upload a channel image';
+    }
+
+    if(error){
+       console.log('Channel creation error is', error)
+       alert(error)
+       return
+    }
 
     // Dispatch User form data to the Server
     let NewChannelData = {
@@ -555,9 +645,11 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
       const data = await res.json();
       console.log('Channel creation successful', data)
       dispatch(AddChannel({ NewChannelInfo : data, UserLoggedIn : userID }))
+      setChannelImage(null)
       closeChannelModal();
     } catch (error) {
-      console.log("New Channel creating error", error);
+      setChannelImage(null)
+      handleError('Error Creating Channel Please try again after sometime')
     }
 
   }
@@ -594,12 +686,14 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
       const { success, message, userID, user } = data;
       if (success) {
         Cookies.remove('access-token')
+        localStorage.removeItem('CurrentUser')
         setTimeout(() => {
           navigate('/')
         }, 1000);
 
         handleSuccess(message)
         dispatch(loggedOutUser({ userID: userID, username: user, isAuthenticated: false }))
+        setManageUser(false)
 
       } else {
         Cookies.remove('access-token')
@@ -611,7 +705,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
         dispatch(loggedOutUser({ userID: userID, username: user, isAuthenticated: false }))
       }
     } catch (e) {
-      console.log('Catch error', e)
+      handleError('Log out Error please try after sometime ...')
     }
 
   }
@@ -645,7 +739,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
       const { success, userID, user } = data;
 
       if (success) {
-
+        localStorage.removeItem('CurrentUser')
         setTimeout(() => {
           navigate('/')
         }, 1000);
@@ -709,7 +803,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
       <div className='user_content flex @max-4lg/wrapper:absolute @max-4lg/wrapper:right-4 z-50'>
         <button className='btn_create_channel w-max flex justify-center items-center mr-8 ml-5 cursor-pointer 
         @max-sm/wrapper:ml-3 @max-sm/wrapper:mr-0 @max-md/wrapper:ml-3 @max-lg/wrapper:mr-0 @max-4lg/wrapper:mr-0'
-          onClick={() => handleCreateChannelModal()}><img className='@max-sm/wrapper:w-5 @max-md/wrapper:w-5 @max-lg/wrapper:w-5 w-5 mr-2' src="https://img.icons8.com/?size=100&id=3220&format=png&color=000000" alt="" /> <span className='max-[992px]:hidden'>Create Channel</span> </button>
+          onClick={() => handleCreateChannelModal()}><img className='@max-sm/wrapper:w-5 @max-md/wrapper:w-5 @max-lg/wrapper:w-5 w-5 mr-3' src="https://img.icons8.com/?size=100&id=3220&format=png&color=000000" alt="" /> <span className='max-[992px]:hidden'>Create Channel</span> </button>
         
         {
           username == 'Guest' ? <button className='flex justify-center cursor-pointer items-center
@@ -720,7 +814,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
            gap-2 p-2 border-2 w-32 mr-4 border-slate-100 text-blue-600' onClick={() => setLoginModelOpen(true)}><img className='@max-sm/wrapper:w-8 @min-sm/wrapper:w-10' src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000" alt="" /> <span className='max-[992px]:hidden'>Sign in</span> </button>
             : <div ref={userImg} className='relative'>
 
-              <img className='w-14 h-14 rounded-full object-cover ring-slate-800 ring-1 @min-4lg/wrapper:mr-8 @min-4lg/wrapper:ml-5' src={profilepicture} alt={username} onClick={() => toggleManageUser()} />
+              <img className='@max-4lg/wrapper:w-12 @max-4lg/wrapper:h-12 @min-4lg/wrapper:w-14 @min-4lg/wrapper:h-14 rounded-full object-cover ring-slate-800 ring-1 @min-4lg/wrapper:mr-8 @min-4lg/wrapper:ml-5' src={profilepicture} alt={username} onClick={() => toggleManageUser()} />
 
               {ManageUser && <ManageUserBox />}
 
@@ -843,8 +937,19 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
           <div className='text-xl font-medium m-2'>Create your Youtube Account </div>
 
           <div className='registrationBox'>
-            <form id='userRegisterForm' className='Registerform_style border-slate-500 border-1'>
+            <form id='userRegisterForm' className='Registerform_style border-slate-500 border-1 relative'>
 
+            <div className="UserImageLogo flex flex-col items-center justify-center m-auto">
+
+              <label className='UserImageLabel cursor-pointer m-auto relative' htmlFor="img">
+                <img className='UserImageChange' src={profilepicture} alt={username} />
+                <Edit className='absolute bottom-2 right-1' />
+              </label>
+              <p id='ProfileImageName' className='w-max mt-1' >Select Profile Image</p>
+              <input type="file" accept='image/*' name="uploadfile" id="img" style={{ display: "none" }} onChange={handleProfileImage} />
+
+            </div>
+            
 
               <label htmlFor="fname">FirstName :</label>
               <input className='ring-blue-300 ring-2 rounded-lg' type="text" name="firstname" id="fname" />
@@ -858,10 +963,14 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
               <label htmlFor="password">Password : </label>
               <input className='ring-blue-300 ring-2 rounded-lg' type="password" name="password" id="password" />
 
-
+              <label htmlFor="handle">Handle: </label>
+              <input className='ring-blue-300 ring-2 rounded-lg' type="text" placeholder='@SomefancyName' name="handle" id="handle" />
+              
               <input className='RegisterSubmit ring-red-600 rounded-xl ring-2' onClick={(e) => handleRegisterForm(e)} type="submit" value="Register" />
-
+              
             </form>
+
+            
             <div className="ModalMainLogo w-full flex justify-center items-center">
               <img className='YTLogoImg' src="https://img.icons8.com/?size=100&id=9a46bTk3awwI&format=png&color=000000" alt="youtube_logo" />
             </div>

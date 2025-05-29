@@ -173,7 +173,7 @@ export const createChannel = async (req, res) => {
         channelImg : channelimageData.url,
         handle: handle,
         owner: userID,
-        description: description,
+        description: description || 'Welcome to official Youtube Channel',
         channelBanner : 'https://thedogcoachedinburgh.co.uk/wp-content/themes/variations/assets/images/island/island-banner-about.jpg',
         subscribers : '3k'
      })

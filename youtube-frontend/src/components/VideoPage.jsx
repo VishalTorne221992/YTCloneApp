@@ -93,7 +93,7 @@ function VideoPage() {
       dispatch(AddCommentState(Comment))
 
     } catch (error) {
-      console.log("error adding comment", error);
+          alert('Error Adding Comment. Please try after sometime ...')
     } finally {
       setNewComment('');
       setAddComment(false)
@@ -116,6 +116,8 @@ function VideoPage() {
         }
         return num
     }
+
+    
 
   return (
     <div className='VideoPageWrapper flex'>

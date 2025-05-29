@@ -68,14 +68,13 @@ aside .custom_scrollbar{
 
     .customStylesRegister{
         position: absolute;
-        top: 45%;
+        top: 50%;
         left: 50%;
         right: auto;
         bottom: auto;
         transform: translate(-50%, -50%);
         width: 20rem;
-        height: calc(16rem + 2rem);
-        padding: .1rem;
+        height: max-content;
         padding-top: 5px;
         background-color: rgb(255, 253, 253);
     }
@@ -94,14 +93,13 @@ aside .custom_scrollbar{
         display: flex;
         padding: .2rem;
         
-        
     }
 
     .Registerform_style{
         display: grid;
         grid-template-columns: 5rem 2fr;
         gap:.8em;
-        padding: .4rem;
+        padding: .3rem;
     }
 
     .Registerform_style input{
@@ -110,7 +108,7 @@ aside .custom_scrollbar{
     }
 
     .Registerform_style label{
-        place-self: end;
+        place-self: center;
     }
 
     .RegisterSubmit{
@@ -137,6 +135,24 @@ aside .custom_scrollbar{
         bottom: 0;
         background-color: rgb(136, 136, 136, 0.65);
         z-index: 998;
+    }
+
+    .UserImageLogo{
+        width: 8rem;
+        grid-column: 1/-1;
+    }
+
+    #userRegisterForm .UserImageLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .UserImageChange{
+        width: 5rem;
+        height: 4.5rem;
+        border-radius: 100%;
     }
 
     .profileChannelLogo{
@@ -394,8 +410,8 @@ aside .custom_scrollbar{
         right: auto;
         bottom: auto;
         transform: translate(-50%, -50%);
-        width: 22rem;
-        height: calc(16rem + 2rem);
+        width: 100%;
+        height: max-content;
         padding: .1rem;
         padding-top: 5px;
         background-color: rgb(255, 253, 253);
@@ -416,6 +432,24 @@ aside .custom_scrollbar{
         padding: .2rem;
         
         
+    }
+
+    .UserImageLogo{
+        width: 8rem;
+        grid-column: 1/-1;
+    }
+
+    #userRegisterForm .UserImageLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .UserImageChange{
+        width: 5rem;
+        height: 4.5rem;
+        border-radius: 100%;
     }
 
     .Registerform_style{
@@ -710,13 +744,13 @@ aside .custom_scrollbar{
 
    .customStylesRegister{
         position: absolute;
-        top: 45%;
+        top: 50%;
         left: 50%;
         right: auto;
         bottom: auto;
         transform: translate(-50%, -50%);
-        width: 25rem;
-        height: calc(16rem + 2rem);
+        width: 100%;
+        height: max-content;
         padding: .1rem;
         padding-top: 5px;
         background-color: rgb(255, 253, 253);
@@ -734,9 +768,25 @@ aside .custom_scrollbar{
 
     .registrationBox{
         display: flex;
-        padding: .2rem;
-        
-        
+        padding: .2rem; 
+    }
+
+    .UserImageLogo{
+        width: 8rem;
+        grid-column: 1/-1;
+    }
+
+    #userRegisterForm .UserImageLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .UserImageChange{
+        width: 5rem;
+        height: 4.5rem;
+        border-radius: 100%;
     }
 
     .Registerform_style{
@@ -1040,7 +1090,7 @@ aside .custom_scrollbar{
         transform: translate(-50%, -50%);
         min-width: 27rem;
         max-width: 30rem;
-        height: calc(16rem + 2rem);
+        height: max-content;
         padding: .1rem;
         padding-top: 5px;
         background-color: rgb(255, 253, 253);
@@ -1060,7 +1110,24 @@ aside .custom_scrollbar{
         display: flex;
         padding: .2rem;
         
-        
+    }
+
+    .UserImageLogo{
+        width: 8rem;
+        grid-column: 1/-1;
+    }
+
+    #userRegisterForm .UserImageLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .UserImageChange{
+        width: 5rem;
+        height: 4.5rem;
+        border-radius: 100%;
     }
 
     .Registerform_style{
@@ -1356,14 +1423,14 @@ aside .custom_scrollbar{
 
     .customStylesRegister{
         position: absolute;
-        top: 45%;
+        top: 52%;
         left: 50%;
         right: auto;
         bottom: auto;
         transform: translate(-50%, -50%);
-        width: 30rem;
-        height: calc(18rem + 2rem);
-        padding: .1rem;
+        width: 35rem;
+        height: max-content;
+        padding: 1rem;
         padding-top: 5px;
         background-color: rgb(255, 253, 253);
     }
@@ -1406,7 +1473,7 @@ aside .custom_scrollbar{
         transform: translateX(100%);
     }
 
-        .customStylesChannel{
+    .customStylesChannel{
         position: absolute;
         top: 50%;
         left: 50%;
@@ -1428,8 +1495,20 @@ aside .custom_scrollbar{
         z-index: 998;
     }
 
+    .UserImageLogo{
+        width: 8rem;
+        grid-column: 1/-1;
+    }
+
+    #userRegisterForm .UserImageLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
     .profileChannelLogo{
-        width: 9rem;
+        width: 8rem;
         margin-top: 2.5rem;
         margin-bottom: 2rem;
     }
@@ -1439,6 +1518,12 @@ aside .custom_scrollbar{
         text-wrap: nowrap;
         margin-top: .4rem;
         right: -1.5rem;
+    }
+
+    .UserImageChange{
+        width: 6.5rem;
+        height: 6rem;
+        border-radius: 100%;
     }
 
     .ChannelImgChange{
@@ -1679,13 +1764,13 @@ aside .custom_scrollbar{
 
     .customStylesRegister{
         position: absolute;
-        top: 45%;
+        top: 50%;
         left: 50%;
         right: auto;
         bottom: auto;
         transform: translate(-50%, -50%);
         width: 38rem;
-        height: calc(19rem + 2rem);
+        height: max-content;
         padding: .1rem;
         padding-top: .6rem;
         padding-bottom: 10px;
@@ -1706,6 +1791,24 @@ aside .custom_scrollbar{
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .UserImageLogo{
+        width: 8rem;
+        grid-column: 1/-1;
+    }
+
+    #userRegisterForm .UserImageLogo > label > p {
+        position: absolute;
+        text-wrap: nowrap;
+        margin-top: .4rem;
+        right: -1.5rem;
+    }
+
+    .UserImageChange{
+        width: 5rem;
+        height: 4.5rem;
+        border-radius: 100%;
     }
 
     .Registerform_style{

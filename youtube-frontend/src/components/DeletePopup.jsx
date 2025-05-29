@@ -52,12 +52,11 @@ function DeletePopup({ element, UserAllChannels }) {
 
               const res = await fetch('http://localhost:4002/api/channel/DeleteChannel', requestOptions)
               const data = await res.json();
-              console.log('Channel successfully Deleted', data)
 
               UserAllChannels((prev) => prev.filter((channel) => channel._id !== element._id))
               
          } catch (error) {
-              console.log('Error Deleting Channel', error);
+              handleError('Error Deleting Channel Please try again after sometime..')
          }
 
     }
@@ -100,7 +99,6 @@ function DeletePopup({ element, UserAllChannels }) {
             }
             
            }catch(err){
-            console.log('Error',err);
             handleError('Login Error ! Please try after sometime')
            }
 
@@ -134,7 +132,7 @@ function DeletePopup({ element, UserAllChannels }) {
         const { success, userID, user} = data;
 
         if(success){
-
+          localStorage.removeItem('CurrentUser')
           setTimeout(() => {
             navigate('/')
           }, 1000);
@@ -145,7 +143,7 @@ function DeletePopup({ element, UserAllChannels }) {
 
         }
         } catch (error) {
-          console.log(error)
+          alert('Please Login')
         }
 
     }

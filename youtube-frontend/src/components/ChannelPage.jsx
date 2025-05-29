@@ -439,9 +439,9 @@ function ChannelPage() {
       const res = await fetch('http://localhost:4002/api/logoutSession', requestOptions)
       const data = await res.json();
       const { success, userID, user } = data;
-
+      
       if (success) {
-
+        localStorage.removeItem('CurrentUser')
         setTimeout(() => {
           navigate('/')
         }, 1000);
@@ -528,7 +528,7 @@ function ChannelPage() {
           @min-2lg/ChannelContainer:absolute @min-2lg/ChannelContainer:bottom-4 @min-2lg/ChannelContainer:left-48
           @min-2xlg/ChannelContainer:absolute @min-2xlg/ChannelContainer:bottom-9 @min-2xlg/ChannelContainer:left-48
           '>
-            <p className='@max-md/ChannelContainer:mb-3 @max-lg/ChannelContainer:mb-3 @max-2xl/ChannelContainer:mb-3 @min-2xl/ChannelContainer:mb-2'>Welcome to official Youtube Channel of {ChannelInfo.channelname} {ChannelInfo.description} <span className='font-semibold'>...more</span> </p>
+            <p className='@max-md/ChannelContainer:mb-3 @max-lg/ChannelContainer:mb-3 @max-2xl/ChannelContainer:mb-3 @min-2xl/ChannelContainer:mb-2'>{ChannelInfo.description} of {ChannelInfo.channelname} <span className='font-semibold'>...more</span> </p>
             <button className='bg-black text-white @max-md/ChannelContainer:mb-2 @max-lg/ChannelContainer:mb-2 @max-2xl/ChannelContainer:mb-2 rounded-2xl text-sm font-semibold w-max h-max p-2 pt-1 pb-1 ml-2'>Subscribe</button>
           </div>
 

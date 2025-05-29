@@ -21,9 +21,10 @@ export const createUser = async (req, res) => {
                         channelImg: user.profilepic,
                         handle: Username,
                         owner: user._id,
-                        description: 'New Channel',
-                        channelBanner: 'https://thedogcoachedinburgh.co.uk/wp-content/themes/variations/assets/images/island/island-banner-about.jpg'
-                     })
+                        description: 'Welcome to official Youtube Channel',
+                        channelBanner: 'https://thedogcoachedinburgh.co.uk/wp-content/themes/variations/assets/images/island/island-banner-about.jpg',
+                        subscribers: '0'
+                    })
             
                      try{
                         await User.updateOne({ email: email }, { $push: { Channels: { $each: [newChannel._id] } } });

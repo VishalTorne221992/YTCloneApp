@@ -9,22 +9,6 @@ import { UpdateVideoState } from '../utils/UserChannelSlice.js'
 
 function UpdateChannelVideo({ ChnVideo }) {
 
-    //   const customStyles = {
-    //     content: {
-    //       top: '50%',
-    //       left: '50%',
-    //       right: 'auto',
-    //       bottom: 'auto',
-    //       transform: 'translate(-50%, -50%)',
-    //       width: '40rem',
-    //       height: '35rem',
-    //       backgroundColor: 'rgb(255, 253, 253)'
-    //     },
-    //     overlay: {
-    //       backgroundColor: 'rgb(136, 136, 136, 0.65)'
-    //     }
-    //   };
-
     let dispatch = useDispatch();
 
     let userID = useSelector(store => store.userInfo.userID);
@@ -101,7 +85,7 @@ function UpdateChannelVideo({ ChnVideo }) {
             //commentRef.current = text;
         
         } catch (error) {
-                console.log("error updating comment", error);
+                alert('Error Updating Channel Please try again later...')
         }finally {
             
             setVideoEditModelOpen(false)

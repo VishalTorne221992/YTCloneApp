@@ -6,7 +6,6 @@ import Videoframe from "./Videoframe"
 import SearchPage from './SearchPage.jsx';
 import { categories } from '../utils/constants.js'
 
-
 function Videolist() {
 
   const [toggleSidebar, isSidebarOpen, setFilteredVideos, FilteredVideos, setSearchFlag, Searchflag] = useOutletContext();
@@ -44,16 +43,16 @@ function Videolist() {
 
 
   return (
-    <div style={{scrollbarWidth: 'none'}} className='flex overflow-scroll z-10'>
+    <div style={{scrollbarWidth: 'none'}} className='flex overflow-scroll z-30'>
 
       <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
 
       <div className={`w-full max-sm:px-2 px-4 overflow-x-hidden ${isSidebarOpen}`}>
 
-      <div className="sticky bg-white top-0 z-10 pb-4 pr-2 pl-2 pt-3 flex items-center m-auto gap-3 overflow-auto" style={{ scrollbarWidth : 'none'}}>
+      <div className="sticky bg-white top-0 z-40 pb-4 pr-2 pl-2 pt-3 flex items-center m-auto gap-3 overflow-auto" style={{ scrollbarWidth : 'none'}}>
         {
           categories && categories.map((category) => {
-            return <div onMouseDown={(e) => handleCapsuleClick(e)} className={`text-[15px] h-8 font-medium whitespace-nowrap rounded-lg px-3 py-1 ${category === "All" ? 'bg-black text-white hover:bg-neutral-950' : 'bg-neutral-200 text-black hover:bg-neutral-300'} cursor-pointer`}>{category}</div>
+            return <div key={category} onMouseDown={(e) => handleCapsuleClick(e)} className={`text-[15px] h-8 font-medium whitespace-nowrap rounded-lg px-3 py-1 ${category === "All" ? 'bg-black text-white hover:bg-neutral-950' : 'bg-neutral-200 text-black hover:bg-neutral-300'} cursor-pointer`}>{category}</div>
           })
         }
       </div>
