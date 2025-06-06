@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Define the async thunk for fetching products and category data
 export const fetchVideoComments = createAsyncThunk('YoutubeClone/fetchVideoComments', async (id) => {
-    const response = await fetch(`http://localhost:4002/api/getComments/${id}`);
+    const response = await fetch(`https://ytcloneappservice.onrender.com/api/getComments/${id}`);
     const jsonData = await response.json();
     console.log('returned from video comments', jsonData)
     return jsonData;
