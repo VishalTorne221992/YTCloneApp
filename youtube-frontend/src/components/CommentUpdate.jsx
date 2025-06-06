@@ -47,7 +47,7 @@ function CommentUpdate({ comment }) {
 
         try {
       
-            const res = await fetch('http://localhost:4002/api/updateComment', requestOptions)
+            const res = await fetch('https://ytcloneappservice.onrender.com/api/updateComment', requestOptions)
             const data = await res.json();
             console.log('Comment updated successfully', data)
             
