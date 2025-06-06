@@ -4,13 +4,13 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // Define the async thunk for fetching products and category data
 
   export const fetchChannelInfo = createAsyncThunk('categories/fetchChannelInfo', async (id) => {
-    const response = await fetch(`http://localhost:4002/api/ChannelInfo/${id}`);
+    const response = await fetch(`https://ytcloneappservice.onrender.com/api/ChannelInfo/${id}`);
     const jsonData = await response.json();
     return jsonData;
   });
 
   export const fetchUserChannelData = createAsyncThunk('YoutubeClone/fetchUserChannelData', async (id) => {
-    const response = await fetch(`http://localhost:4002/api/UserChannels/${id}`);
+    const response = await fetch(`https://ytcloneappservice.onrender.com/api/UserChannels/${id}`);
     const jsonData = await response.json();
     console.log('userchannels', jsonData);
     return jsonData;
