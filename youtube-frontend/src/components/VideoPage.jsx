@@ -33,7 +33,7 @@ function VideoPage() {
     // Get Video Details based on ID
     const getVideoDetails = async () => {
 
-      const videodetails = await fetch(`http://localhost:4002/api/video/${id}`)
+      const videodetails = await fetch(`https://ytcloneappservice.onrender.com/api/video/${id}`)
 
       const videodata = await videodetails.json();
 
@@ -87,7 +87,7 @@ function VideoPage() {
 
     try {
 
-      const res = await fetch('http://localhost:4002/api/AddComment', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/AddComment', requestOptions)
       const data = await res.json();
       let { Comment } = data
       dispatch(AddCommentState(Comment))
