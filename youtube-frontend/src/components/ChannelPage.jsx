@@ -113,7 +113,7 @@ function ChannelPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:4002/api/UserAuth', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/UserAuth', requestOptions)
       const data = await res.json()
       console.log('Authentication response', data)
       const { success, message, user } = data;
@@ -172,7 +172,7 @@ function ChannelPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:4002/api/channel/updateChannelImage', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/channel/updateChannelImage', requestOptions)
       const data = await res.json();
       let { channelImg } = data.UpdatedChannelImage;
       dispatch(UpdateChannelImage({ ChangedImage: channelImg }))
@@ -203,7 +203,7 @@ function ChannelPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:4002/api/UserAuth', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/UserAuth', requestOptions)
       const data = await res.json()
       console.log('Authentication response', data)
       const { success, message, user } = data;
@@ -250,7 +250,7 @@ function ChannelPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:4002/api/UpdateChannelInfo', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/UpdateChannelInfo', requestOptions)
       const data = await res.json();
       let { channelname, channelImg, handle, description } = data.UpdatedChannelInfo;
       let { message } = data
@@ -282,7 +282,7 @@ function ChannelPage() {
 
     // Check user is authorized or session expired or not
     try {
-      const res = await fetch('http://localhost:4002/api/UserAuth', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/UserAuth', requestOptions)
       const data = await res.json()
       console.log('Authentication response', data)
       const { success, message, user } = data;
@@ -327,7 +327,7 @@ function ChannelPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:4002/api/updateChannelBanner', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/updateChannelBanner', requestOptions)
       const data = await res.json();
       let { channelBanner } = data.UpdatedChannelData;
       dispatch(updateChannelBanner({ ChangedBanner: channelBanner }))
@@ -357,7 +357,7 @@ function ChannelPage() {
 
     // Check user is authorized or session expired or not
     try {
-      const res = await fetch('http://localhost:4002/api/UserAuth', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/UserAuth', requestOptions)
       const data = await res.json()
       console.log('Authentication response', data)
       const { success, message, user } = data;
@@ -436,7 +436,7 @@ function ChannelPage() {
 
     try {
 
-      const res = await fetch('http://localhost:4002/api/logoutSession', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/logoutSession', requestOptions)
       const data = await res.json();
       const { success, userID, user } = data;
       
