@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Define the async thunk for fetching products and category data
 export const fetchVideosData = createAsyncThunk('products/fetchVideosData', async () => {
-    const response = await fetch('http://localhost:4002/api/AllVideos');
+    const response = await fetch('https://ytcloneappservice.onrender.com/api/AllVideos');
     const jsonData = await response.json();
     return jsonData;
   });
