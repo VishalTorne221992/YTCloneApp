@@ -50,7 +50,7 @@ function DeletePopup({ element, UserAllChannels }) {
 
         try {
 
-              const res = await fetch('http://localhost:4002/api/channel/DeleteChannel', requestOptions)
+              const res = await fetch('https://ytcloneappservice.onrender.com/api/channel/DeleteChannel', requestOptions)
               const data = await res.json();
 
               UserAllChannels((prev) => prev.filter((channel) => channel._id !== element._id))
@@ -79,7 +79,7 @@ function DeletePopup({ element, UserAllChannels }) {
            }
       
            try{
-            const res = await fetch('http://localhost:4002/api/UserAuth', requestOptions)
+            const res = await fetch('https://ytcloneappservice.onrender.com/api/UserAuth', requestOptions)
             const data = await res.json()
             console.log('Authentication response', data)
             const { success, message, user } = data;
@@ -127,7 +127,7 @@ function DeletePopup({ element, UserAllChannels }) {
    
         try {
 
-        const res = await fetch('http://localhost:4002/api/logoutSession', requestOptions)
+        const res = await fetch('https://ytcloneappservice.onrender.com/api/logoutSession', requestOptions)
         const data = await res.json();
         const { success, userID, user} = data;
 
