@@ -58,7 +58,7 @@ function UpdateVideo({ elementName, element, setEditOpen, setDeletedCLicked }) {
 
       try {
     
-          const res = await fetch('http://localhost:4002/api/deleteVideo', requestOptions)
+          const res = await fetch('https://ytcloneappservice.onrender.com/api/deleteVideo', requestOptions)
           const data = await res.json();
           
           dispatch(DeleteVideoState({ userID : elem.uploader, VideoID : elem._id }))
@@ -101,7 +101,7 @@ function UpdateVideo({ elementName, element, setEditOpen, setDeletedCLicked }) {
 
       try {
     
-          const res = await fetch('http://localhost:4002/api/deleteComment', requestOptions)
+          const res = await fetch('https://ytcloneappservice.onrender.com/api/deleteComment', requestOptions)
           const data = await res.json();
           console.log('Comment deleted successfully', data)
           
