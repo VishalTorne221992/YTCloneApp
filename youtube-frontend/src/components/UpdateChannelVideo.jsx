@@ -63,7 +63,7 @@ function UpdateChannelVideo({ ChnVideo }) {
     
         try {
         
-            const res = await fetch('http://localhost:4002/api/updateVideo', requestOptions)
+            const res = await fetch('https://ytcloneappservice.onrender.com/api/updateVideo', requestOptions)
             const data = await res.json();
             console.log('Video updated successfully', data)
             
