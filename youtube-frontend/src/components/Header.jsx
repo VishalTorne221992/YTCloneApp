@@ -284,7 +284,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
     }
 
     try {
-      const res = await fetch('http://localhost:4002/api/register', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/register', requestOptions)
       const data = await res.json();
       console.log('data', data)
       const { success, message } = data
@@ -487,7 +487,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
 
     try {
 
-      const res = await fetch('http://localhost:4002/api/login', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/login', requestOptions)
       const data = await res.json();
       const { message, success, userID, username, accountName, handle, pic, channels, token } = data
        
@@ -567,7 +567,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
     }
 
     try {
-      const res = await fetch('http://localhost:4002/api/UserAuth', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/UserAuth', requestOptions)
       const data = await res.json()
       const { success, message, user } = data;
 
@@ -641,7 +641,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
 
     try {
 
-      const res = await fetch('http://localhost:4002/api/createChannel', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/createChannel', requestOptions)
       const data = await res.json();
       console.log('Channel creation successful', data)
       dispatch(AddChannel({ NewChannelInfo : data, UserLoggedIn : userID }))
@@ -680,7 +680,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
 
     try {
 
-      const res = await fetch('http://localhost:4002/api/logout', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/logout', requestOptions)
       const data = await res.json();
 
       const { success, message, userID, user } = data;
@@ -734,7 +734,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
 
     try {
 
-      const res = await fetch('http://localhost:4002/api/logoutSession', requestOptions)
+      const res = await fetch('https://ytcloneappservice.onrender.com/api/logoutSession', requestOptions)
       const data = await res.json();
       const { success, userID, user } = data;
 
