@@ -18,7 +18,7 @@ export const createUser = async (req, res) => {
 
                     const newChannel = await Channel.create({
                         channelname: Username,
-                        channelImg: user.profilepic,
+                        channelImg: profilepic,
                         handle: Username,
                         owner: user._id,
                         description: 'Welcome to official Youtube Channel',
