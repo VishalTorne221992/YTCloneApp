@@ -49,7 +49,7 @@ function Videolist() {
 
       <div className={`w-full max-sm:px-2 px-4 overflow-x-hidden ${isSidebarOpen}`}>
 
-      <div className="sticky bg-white top-0 z-30 pb-4 pr-2 pl-2 pt-3 flex items-center m-auto gap-3 overflow-auto" style={{ scrollbarWidth : 'none'}}>
+      <div className="sticky bg-white top-0 z-10 pb-4 pr-2 pl-2 pt-3 flex items-center m-auto gap-3 overflow-auto" style={{ scrollbarWidth : 'none'}}>
         {
           categories && categories.map((category) => {
             return <div key={category} onMouseDown={(e) => handleCapsuleClick(e)} className={`text-[15px] h-8 font-medium whitespace-nowrap rounded-lg px-3 py-1 ${category === "All" ? 'bg-black text-white hover:bg-neutral-950' : 'bg-neutral-200 text-black hover:bg-neutral-300'} cursor-pointer`}>{category}</div>
