@@ -801,7 +801,7 @@ export default function Header({ toggleSidebar, setSearchFlag, SearchText, setSe
           <img className='@max-sm/wrapper:w-6 @min-sm/wrapper:w-8 @min-lg/wrapper:w-8 @min-4lg/wrapper:w-8 w-8' src="https://img.icons8.com/?size=100&id=XU3XKgdpT0qG&format=png&color=000000" alt="search" /></button>
       </div>
 
-      <div className='user_content flex @max-4lg/wrapper:absolute @max-4lg/wrapper:right-4 z-50'>
+      <div className='user_content flex @max-4lg/wrapper:absolute @max-4lg/wrapper:right-4'>
         <button className='btn_create_channel w-max flex justify-center items-center mr-8 ml-5 cursor-pointer 
         @max-sm/wrapper:ml-3 @max-sm/wrapper:mr-0 @max-md/wrapper:ml-3 @max-lg/wrapper:mr-0 @max-4lg/wrapper:mr-0'
           onClick={() => handleCreateChannelModal()}><img className='@max-sm/wrapper:w-5 @max-md/wrapper:w-5 @max-lg/wrapper:w-5 w-5 mr-3' src="https://img.icons8.com/?size=100&id=3220&format=png&color=000000" alt="" /> <span className='max-[992px]:hidden'>Create Channel</span> </button>
