@@ -43,7 +43,7 @@ function Videolist() {
 
 
   return (
-    <div style={{scrollbarWidth: 'none'}} className='flex overflow-scroll z-30'>
+    <div style={{scrollbarWidth: 'none'}} className='flex overflow-scroll'>
 
       <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
 
