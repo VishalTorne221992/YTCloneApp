@@ -7,7 +7,7 @@ function SearchPage({ FilteredVideos, toggleSidebar, isSidebarOpen, setSearchFla
 
   
   return (
-    <div className='flex overflow-auto z-10'>
+    <div className='flex overflow-auto z-5'>
 
     <div className={`w-full overflow-x-hidden custom_scrollbar ${isSidebarOpen}`}>
       <div className='grid gap-4 grid-cols-[repeat(auto-fit,minmax(280px,1fr))] mt-0 pb-6'>
