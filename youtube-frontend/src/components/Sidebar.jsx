@@ -21,7 +21,7 @@ function Sidebar({ toggleSidebar, isSidebarOpen }) {
     <aside className={`${isSidebarOpen
       ? "max-md:left-0 w-[280px] px-3"
       : "max-md:left-[-100%] w-0 px-0"
-      } max-md:absolute max-md:h-screen max-md:top-0 bg-white overflow-hidden max-md:transition-all z-40 max-md:duration-200`}>
+      } max-md:absolute max-md:h-screen max-md:top-0 bg-white overflow-hidden max-md:transition-all z-50 max-md:duration-200`}>
 
       <div className="md:hidden p-6 px-1 sticky top-0 bg-white">
         <LogoSection toggleSidebar={toggleSidebar} />
