@@ -50,6 +50,14 @@ function App() {
       <header className='flex w-full items-center @max-4lg/wrapper:relative @min-4lg/wrapper:justify-between p-2.5'>
         <Header toggleSidebar={toggleSidebar} Searchflag={Searchflag} setSearchFlag={setSearchFlag} SearchText={SearchText} setSearch={setSearchText} setFiltered={setFilteredVideos} />
       </header>
+
+      {/* Overlay for mobile to close sidebar */}
+        <div
+          onClick={toggleSidebar}
+          className={`md:hidden ${
+            !isSidebarOpen && "opacity-0 pointer-events-none"
+          } transition-all bg-black bg-opacity-50 h-screen w-full fixed left-0 top-0 z-20`}
+        ></div>
   
       <Outlet context={[toggleSidebar, isSidebarOpen, setFilteredVideos, FilteredVideos, setSearchFlag, Searchflag]} />
       <ToastContainer />
