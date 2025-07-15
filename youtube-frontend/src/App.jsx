@@ -56,7 +56,7 @@ function App() {
           onClick={toggleSidebar}
           className={`md:hidden ${
             !isSidebarOpen && "opacity-0 pointer-events-none"
-          } transition-all bg-black opacity-50 h-screen w-full fixed left-0 top-0 z-20`}
+          } transition-all bg-black opacity-50 h-screen w-full fixed left-0 top-0`}
         ></div>
   
       <Outlet context={[toggleSidebar, isSidebarOpen, setFilteredVideos, FilteredVideos, setSearchFlag, Searchflag]} />
